@@ -7,7 +7,6 @@ button {
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
-    box-shadow: 2px 2px 5px #c5c5c5, -6px -6px 12px #ffffff;
   }
   
   button:hover {
@@ -18,3 +17,7 @@ button {
     box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
   }
   
+  #input{
+    padding: 6px 6px 6px 10px;
+    border-radius: 0.5em;
+  }

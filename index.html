@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark">
-    <h1 class="text-center text-light mt-5 pb-3">Weather App</h1>
-    <div class="d-flex justify-content-center align-items-center mt-4">
-        <form id="form">
-            <input class="" id="input" type="text" placeholder="Enter the city name">
-            <button class="m-0" type="submit">Get Weather</button>
+
+<body>
+    <h1 class="text-center main-heading">
+        <svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <defs>
+                <linearGradient id="a" x1="16.5" y1="19.67" x2="21.5" y2="28.33" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#fbbf24" />
+                    <stop offset="0.45" stop-color="#fbbf24" />
+                    <stop offset="1" stop-color="#f59e0b" />
+                </linearGradient>
+                <linearGradient id="b" x1="40.76" y1="23" x2="50.83" y2="40.46" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#9ca3af" />
+                    <stop offset="0.45" stop-color="#9ca3af" />
+                    <stop offset="1" stop-color="#6b7280" />
+                </linearGradient>
+                <linearGradient id="c" x1="22.56" y1="21.96" x2="39.2" y2="50.8" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#f3f7fe" />
+                    <stop offset="0.45" stop-color="#f3f7fe" />
+                    <stop offset="1" stop-color="#deeafb" />
+                </linearGradient>
+            </defs>
+            <circle cx="19" cy="24" r="5" stroke="#f8af18" stroke-miterlimit="10" stroke-width="0.5" fill="url(#a)" />
+            <path
+                d="M19,15.67V12.5m0,23V32.33m5.89-14.22,2.24-2.24M10.87,32.13l2.24-2.24m0-11.78-2.24-2.24M27.13,32.13l-2.24-2.24M7.5,24h3.17M30.5,24H27.33"
+                fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+                <animateTransform attributeName="transform" type="rotate" values="0 19 24; 360 19 24" dur="45s"
+                    repeatCount="indefinite" />
+            </path>
+            <path
+                d="M34.23,33.45a4.05,4.05,0,0,0,4.05,4H54.79a4.34,4.34,0,0,0,.81-8.61,3.52,3.52,0,0,0,.06-.66,4.06,4.06,0,0,0-6.13-3.48,6.08,6.08,0,0,0-11.25,3.19,6.34,6.34,0,0,0,.18,1.46h-.18A4.05,4.05,0,0,0,34.23,33.45Z"
+                stroke="#848b98" stroke-miterlimit="10" stroke-width="0.5" fill="url(#b)">
+                <animateTransform attributeName="transform" type="translate" values="-2.1 0; 2.1 0; -2.1 0" dur="7s"
+                    repeatCount="indefinite" />
+            </path>
+            <path
+                d="M46.5,31.5l-.32,0a10.49,10.49,0,0,0-19.11-8,7,7,0,0,0-10.57,6,7.21,7.21,0,0,0,.1,1.14A7.5,7.5,0,0,0,18,45.5a4.19,4.19,0,0,0,.5,0v0h28a7,7,0,0,0,0-14Z"
+                stroke="#e6effc" stroke-miterlimit="10" stroke-width="0.5" fill="url(#c)">
+                <animateTransform attributeName="transform" type="translate" values="-3 0; 3 0; -3 0" dur="7s"
+                    repeatCount="indefinite" />
+            </path>
+        </svg>
+        Weather App
+    </h1>
+    <div class="d-flex justify-content-center mt-4">
+        <form id="form" class="w-50 text-center align-items-center d-flex flex-column justify-content-center">
+            <input class="w-75" id="input" type="text" placeholder="Enter the city name">
+            <button class="m-0 mt-3" type="submit">Get Weather</button>
         </form>
     </div>
     <div class="mt-5 weather-wrapper d-flex flex-column gap-5">
-        <!-- <div style="width: fit-content;" class="bg-light d-flex justify-content-center align-items-center mx-auto p-4 rounded">
-            <div>
-                <img width="100px" src="//cdn.weatherapi.com/weather/64x64/night/116.png" alt="">
+        <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
+            <div class="d-flex time-wrapper justify-content-between align-items-center w-100">
+                <h2 style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
+                    Current Weather
+                </h2>
+                <p style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
+                    4:26 PM
+                </p>
             </div>
-            <div class="w-50">
-                <div>
+            <div style="height: 1px;background-color: #d7d1d1;" class="w-100"></div>
+            <div class="w-100 d-flex main-wrapper">
+                <div class="w-50">
                     <h1>
                         23 C
                     </h1>
                 </div>
-                <div>
+                <div class="w-50">
                     <h3>
                         Amsterdam, Netherland
                     </h3>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

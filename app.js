@@ -11,9 +11,6 @@ form.addEventListener('submit', event => {
         console.log(res);
         let initialTime = res.location.localtime;
         let finalTime = initialTime.slice(11);
-        // console.log(res.current.condition.icon);
-        // console.log(res.current.temp_c);
-        // h1.innerHTML = `${res.current.temp_c} C`
         let weatherBefore = weatherWrapper.innerHTML;
         let arr = [];
         arr.push(weatherBefore);

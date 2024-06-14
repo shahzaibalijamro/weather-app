@@ -9,30 +9,66 @@ form.addEventListener('submit', event => {
     .then(res => res.data)
     .then(res => {
         console.log(res);
+        let initialTime = res.location.localtime;
+        let finalTime = initialTime.slice(11);
         // console.log(res.current.condition.icon);
         // console.log(res.current.temp_c);
         // h1.innerHTML = `${res.current.temp_c} C`
-        weatherWrapper.innerHTML += `
-        <div style="width: fit-content;" class="bg-light d-flex justify-content-evenly align-items-center mx-auto p-4 rounded">
-            <div>
-                <img width="100px" src="${res.current.condition.icon}" alt="">
+        let weatherBefore = weatherWrapper.innerHTML;
+        let arr = [];
+        arr.push(weatherBefore);
+        weatherWrapper.innerHTML = `
+        <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
+            <div class="d-flex time-wrapper justify-content-between align-items-center w-100">
+                <h2 style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
+                    Last recorded at
+                </h2>
+                <p style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
+                    ${finalTime}
+                </p>
             </div>
-            <div class="w-50">
-                <div>
-                    <h1>
-                        ${res.current.temp_c}
-                    </h1>
+            <div style="height: 1px;background-color: #d7d1d1;" class="w-100"></div>
+            <div class="d-flex main-wrapper">
+                <div class="main-wrapper-left">
+                    <div class="degree-wrapper">
+                        <div>
+                            <img class="weather-img" src="https:${res.current.condition.icon}" alt="">
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-baseline">
+                                <div class="temperature-main">
+                                    ${res.current.temp_c}°
+                                </div>
+                                <span class="temperature-side">C</span>
+                            </div>
+                            <div class="real-feel">
+                                RealFeel® ${res.current.feelslike_c}°
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="weather-review">${res.current.condition.text}</span>
+                    </div>
                 </div>
-                <div>
-                    <p>
-                    ${res.current.condition.text}
-                    </p>
+                <div class="main-wrapper-right">
+                    <div class="d-flex justify-content-between weather-details">
+                        <span>Name</span>
+                        <span class="weather-details-value">${res.location.name}</span>
+                    </div>
+                    <div class="d-flex justify-content-between weather-details">
+                        <span>Region</span>
+                        <span class="weather-details-value">${res.location.region}, ${res.location.country}</span>
+                    </div>
+                    <div class="d-flex justify-content-between weather-details">
+                        <span>Wind</span>
+                        <span class="weather-details-value">${res.current.wind_kph} KPH</span>
+                    </div>
                 </div>
             </div>
         </div>
-        `
+        ` + arr;
     })
     .catch(err=>{
-        console.log(err);
+        alert('Probably a spelling mistake or no such city exists.')
     })
 })

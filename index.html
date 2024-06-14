@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <h1 class="text-center main-heading">
+    <div class="header-wrapper d-flex justify-content-center align-items-center">
         <svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <defs>
                 <linearGradient id="a" x1="16.5" y1="19.67" x2="21.5" y2="28.33" gradientUnits="userSpaceOnUse">
@@ -55,16 +55,18 @@
                     repeatCount="indefinite" />
             </path>
         </svg>
-        Weather App
-    </h1>
+        <h1 class="text-center main-heading">
+            Weather App
+        </h1>
+    </div>
     <div class="d-flex justify-content-center mt-4">
-        <form id="form" class="w-50 text-center align-items-center d-flex flex-column justify-content-center">
-            <input class="w-75" id="input" type="text" placeholder="Enter the city name">
-            <button class="m-0 mt-3" type="submit">Get Weather</button>
+        <form id="form" class="text-center align-items-center d-flex flex-column justify-content-center">
+            <input id="input" type="text" placeholder="Enter the city name">
+            <button type="submit">Get Weather</button>
         </form>
     </div>
-    <div class="mt-5 weather-wrapper d-flex flex-column gap-5">
-        <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
+    <div class="mt-4 weather-wrapper d-flex flex-column gap-4 mb-5">
+        <!-- <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
             <div class="d-flex time-wrapper justify-content-between align-items-center w-100">
                 <h2 style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
                     Current Weather
@@ -74,15 +76,17 @@
                 </p>
             </div>
             <div style="height: 1px;background-color: #d7d1d1;" class="w-100"></div>
-            <div class="w-100 d-flex main-wrapper">
-                <div class="w-50">
-                    <div style="column-gap: 10px;" class="d-flex justify-content-start">
+            <div class="d-flex main-wrapper">
+                <div class="main-wrapper-left">
+                    <div class="degree-wrapper">
                         <div>
                             <img class="weather-img" src="//cdn.weatherapi.com/weather/64x64/night/116.png" alt="">
                         </div>
                         <div>
-                            <div class="temperature-main">
-                                31°
+                            <div class="d-flex align-items-baseline">
+                                <div class="temperature-main">
+                                    31°
+                                </div>
                                 <span class="temperature-side">C</span>
                             </div>
                             <div class="real-feel">
@@ -90,11 +94,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-2 ms-3">
+                    <div>
                         <span class="weather-review">Mostly Cloudy</span>
                     </div>
                 </div>
-                <div class="w-50">
+                <div class="main-wrapper-right">
                     <div class="d-flex justify-content-between weather-details">
                         <span>Name</span>
                         <span class="weather-details-value">Karachi</span>
@@ -109,7 +113,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

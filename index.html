@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <!-- main heading -->
+
     <div class="header-wrapper d-flex justify-content-center align-items-center">
         <svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <defs>
@@ -59,62 +61,23 @@
             Weather App
         </h1>
     </div>
+
+    <!-- input area -->
+
     <div class="d-flex justify-content-center mt-4">
         <form id="form" class="text-center align-items-center d-flex flex-column justify-content-center">
             <input id="input" type="text" placeholder="Enter the city name">
             <button type="submit">Get Weather</button>
         </form>
     </div>
+
+    <!-- weather card section -->
+
     <div class="mt-4 weather-wrapper d-flex flex-column gap-4 mb-5">
-        <!-- <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
-            <div class="d-flex time-wrapper justify-content-between align-items-center w-100">
-                <h2 style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
-                    Current Weather
-                </h2>
-                <p style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
-                    4:26 PM
-                </p>
-            </div>
-            <div style="height: 1px;background-color: #d7d1d1;" class="w-100"></div>
-            <div class="d-flex main-wrapper">
-                <div class="main-wrapper-left">
-                    <div class="degree-wrapper">
-                        <div>
-                            <img class="weather-img" src="//cdn.weatherapi.com/weather/64x64/night/116.png" alt="">
-                        </div>
-                        <div>
-                            <div class="d-flex align-items-baseline">
-                                <div class="temperature-main">
-                                    31°
-                                </div>
-                                <span class="temperature-side">C</span>
-                            </div>
-                            <div class="real-feel">
-                                RealFeel® 34°
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="weather-review">Mostly Cloudy</span>
-                    </div>
-                </div>
-                <div class="main-wrapper-right">
-                    <div class="d-flex justify-content-between weather-details">
-                        <span>Name</span>
-                        <span class="weather-details-value">Karachi</span>
-                    </div>
-                    <div class="d-flex justify-content-between weather-details">
-                        <span>Region</span>
-                        <span class="weather-details-value">Sindh</span>
-                    </div>
-                    <div class="d-flex justify-content-between weather-details">
-                        <span>Wind</span>
-                        <span class="weather-details-value">26 KMH</span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+
     </div>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

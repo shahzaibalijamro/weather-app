@@ -18,7 +18,7 @@ form.addEventListener('submit', event => {
         <div class="bg-light weather-card d-flex flex-column justify-content-center align-items-center mx-auto rounded">
             <div class="d-flex time-wrapper justify-content-between align-items-center w-100">
                 <h2 style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
-                    Last recorded at
+                    Current Time
                 </h2>
                 <p style="font-size: 15px;font-family:'Roboto', sans-serif;font-weight: 500;" class="m-0">
                     ${finalTime}

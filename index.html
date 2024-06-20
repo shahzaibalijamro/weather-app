@@ -12,13 +12,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- main heading -->
 
-    <div class="header-wrapper d-flex justify-content-center align-items-center">
+    <div class="header-wrapper d-flex justify-content-center align-items-center animate__animated animate__fadeInDown">
         <svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <defs>
                 <linearGradient id="a" x1="16.5" y1="19.67" x2="21.5" y2="28.33" gradientUnits="userSpaceOnUse">
@@ -64,7 +67,7 @@
 
     <!-- input area -->
 
-    <div class="d-flex justify-content-center mt-4">
+    <div class="d-flex justify-content-center mt-4 animate__animated animate__fadeInUp">
         <form id="form" class="text-center align-items-center d-flex flex-column justify-content-center">
             <input id="input" type="text" placeholder="Enter the city name">
             <button type="submit">Get Weather</button>
